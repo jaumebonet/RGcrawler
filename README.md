@@ -1,4 +1,4 @@
 RGcrawler
 =========
 
-A Scrapy crawler for ResearchGate
+A Scrapy crawler for ResearchGate.
