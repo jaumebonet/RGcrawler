@@ -31,22 +31,22 @@ deactivate
 ```
 after finishing it...
 
-**How can I run it?**
+**How can I run it?**  
 The only thing you need to type is:
 ```bash
 python -m RGcrawler --authorID <author_id>
 ```
 
-**Where can I find the autor id?**
+**Where can I find the autor id?**  
 When you look to one of your featured publications, the author id is the number that
 appears before your name in your name's link in the author list.
 
-**Would this work with multiple authors?**
+**Would this work with multiple authors?**  
 Yes, you can create a script that queries multiple authors calling the program multiple times. If a called author is co-author with a previous called one, some of the data will be retrieved from the files and not requested online.
 
-**Can I be bloqued from RG?**
+**Can I be bloqued from RG?**  
 No idea. Scrapping is not something web apps like. This is just a fix waiting for RG to release an API. If you query too many pages you might be bloqued for a while (that is, for example, what Google Scholar does), but I´ve never reached that limit with my (small) tests.
 
-**Will the library be updated regularly?**
+**Will the library be updated regularly?**  
 I'm basically using this to (semi)automatically update my CV. Thus, I cannot say. Of course, anybody is more than welcomed to fork and better this (there is soo much that can be improved!). Keep in mind that a scrapper totally depends on the web app layout, which means that any change in RG can invalidate the whole thing... just FYI.
 
