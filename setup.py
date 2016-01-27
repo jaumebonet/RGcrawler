@@ -7,18 +7,12 @@
 # @date:   2016-01-19 17:26:20
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 16:57:13
+# @last modified time: 2016-01-27 17:07:36
 #
 # -*-
 from setuptools import setup, find_packages  # Always prefer setuptools over distutils
 from os import path
-from pynion import __version__ as version
-
-here    = path.abspath(path.dirname(__file__))
-
-
-def read(fname):
-    return open(path.join(path.dirname(__file__), fname)).read()
+from RGcrawler import __version__ as version
 
 setup(
     name='RGcrawler',
