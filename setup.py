@@ -7,11 +7,11 @@
 # @date:   2016-01-19 17:26:20
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 17:13:24
+# @last modified time: 2016-01-27 17:18:15
 #
 # -*-
 from setuptools import setup, find_packages  # Always prefer setuptools over distutils
-from RGcrawler import __version__ as version
+__version__ = '0.0.1'
 
 setup(
     name='RGcrawler',
@@ -19,14 +19,14 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # http://packaging.python.org/en/latest/tutorial.html#version
-    version=version,
+    version=__version__,
 
     description='A Python Library to crawl ResearchGate',
     # long_description=read('README.md'),
 
     # The project's main homepage.
     url='https://github.com/jaumebonet/RGcrawler',
-    download_url = 'https://github.com/jaumebonet/RGcrawler/archive/{0}.tar.gz'.format(version),
+    download_url = 'https://github.com/jaumebonet/RGcrawler/archive/{0}.tar.gz'.format(__version__),
 
     # Author details
     author='Jaume Bonet',
