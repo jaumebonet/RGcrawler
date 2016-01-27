@@ -7,7 +7,7 @@
 # @date:   2016-01-19 17:26:20
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 17:07:36
+# @last modified time: 2016-01-27 17:11:43
 #
 # -*-
 from setuptools import setup, find_packages  # Always prefer setuptools over distutils
@@ -54,7 +54,7 @@ setup(
     platforms='UNIX',
     keywords='development',
 
-    dependency_links=['git+https://github.com/jaumebonet/pynion.git@0.0.4#egg=pynion-0.0.4'],
+    dependency_links=['https://github.com/jaumebonet/pynion.git@0.0.4#egg=pynion-0.0.4'],
     install_requires=['pynion==0.0.4'],
 
     packages=find_packages(exclude=['docs', 'test']),
