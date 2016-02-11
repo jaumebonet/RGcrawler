@@ -7,7 +7,7 @@
 # @date:   2016-01-14 17:33:47
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 16:58:10
+# @last modified time: 2016-02-10 18:42:43
 #
 # -*-
 import json
@@ -45,8 +45,14 @@ class Contribution(JSONer):
     def get_id(self):
         return self._id
 
+    def get_type(self):
+        return self._type
+
     def get_profile(self):
         return self._profile
+
+    def get_short_profile(self):
+        return "_".join(self._profile.split('_')[1:])
 
     def get_contribution_data(self, soup):
         self._type    = soup('span', {'class': 'publication-type'})[0].contents[0]
@@ -115,6 +121,17 @@ class Contribution(JSONer):
         fd.open()
         fd.write(self.to_json())
         fd.close()
+
+    def to_markdown(self):
+        text  = "---\n"
+        text += "layout: post\n"
+        text += "title:  \"" + self._title + "\"\n"
+        text += "date:   {0[0]}-{0[1]}-{0[2]}\n".format(self._date.strip().split('/'))
+        text += "type: {0}\n".format(self._type)
+        text += "authors: {0}\n".format(" ".join([str(x) for x in self._authors]))
+        text += "---\n"
+        text += normalizeText(self._abstract, return_string = False)
+        return text
 
     def __str__(self):
         data = self.to_dict(unpicklable=False, readable=True, api=True)

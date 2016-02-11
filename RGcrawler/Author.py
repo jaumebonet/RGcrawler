@@ -7,7 +7,7 @@
 # @date:   2016-01-14 16:17:54
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 16:58:06
+# @last modified time: 2016-02-11 13:58:58
 #
 # -*-
 import json
@@ -71,6 +71,9 @@ class Author(JSONer):
     def get_profile(self):
         return self._profile
 
+    def get_name(self):
+        return self._name
+
     def get_contribution_count(self):
         return self._stats.get_publications()
 
@@ -118,6 +121,11 @@ class Author(JSONer):
         fd.open()
         fd.write(self.to_json())
         fd.close()
+
+    def to_YAML(self):
+        text  = "- name: {0}\n".format(self._name)
+        text += "  id: {0}\n".format(self._id)
+        return text
 
     # PRIVATE METHODS
     def __str__(self):

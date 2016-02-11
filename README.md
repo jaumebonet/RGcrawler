@@ -47,6 +47,9 @@ Yes, you can create a script that queries multiple authors calling the program m
 **Can I be bloqued from RG?**  
 No idea. Scrapping is not something web apps like. This is just a fix waiting for RG to release an API. If you query too many pages you might be bloqued for a while (that is, for example, what Google Scholar does), but I´ve never reached that limit with my (small) tests.
 
+**Why some authors are not recognised when I can see them in my browser?**
+Well. Some authors have they profile configured in such a way that you can't actually see their profile unless you are logged to ResearchGate. I'm sure the identification cookies can be loaded so that it will look like you are connected, but I´m not going to get into this right now. But... you know... feel free to fork and build upon this!!
+
 **Will the library be updated regularly?**  
 I'm basically using this to (semi)automatically update my CV. Thus, I cannot say. Of course, anybody is more than welcomed to fork and better this (there is soo much that can be improved!). Keep in mind that a scrapper totally depends on the web app layout, which means that any change in RG can invalidate the whole thing... just FYI.
 

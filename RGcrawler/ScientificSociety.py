@@ -7,7 +7,7 @@
 # @date:   2016-01-19 13:06:47
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 16:58:16
+# @last modified time: 2016-02-10 18:40:58
 #
 # -*-
 import json
@@ -154,8 +154,26 @@ class ScientificSociety(JSONer):
     def get_authors(self):
         return self._authors
 
+    def authors2YAML(self, file_name):
+        fd = File(file_name, 'w')
+        fd.open()
+        for author in self._authors:
+            fd.write(self._authors[author].to_YAML())
+        fd.close()
+
+    def contributions2MD(self, exclude = None):
+        for contid in self._contributions:
+            if exclude is None or self._contributions[contid].get_type() not in exclude:
+                fd = File(self._contributions[contid].get_short_profile() + '.md', 'w')
+                fd.open()
+                fd.write(self._contributions[contid].to_markdown(), 'utf-8')
+                fd.close()
+
     def get_contributions(self):
         return self._contributions
+
+    def is_empty(self):
+        return len(self._contributions) == 0 and len(self._authors) == 0
 
     def save(self):
         for aID in self._authors:

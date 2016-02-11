@@ -7,7 +7,7 @@
 # @date:   2016-01-19 15:43:53
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 16:58:34
+# @last modified time: 2016-02-10 18:34:48
 #
 # -*-
 import re
@@ -32,12 +32,15 @@ def researcher2publication(identifier):
     return {'identifier': identifier, 'primary': False, 'corresponding': False}
 
 
-def normalizeText(text):
-    if isinstance(text, str):
+def normalizeText(text, return_string = True):
+    if all(ord(c) < 128 for c in text):
         return text
     text = text.strip()
     text = ''.join((c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn'))
-    return str(text)
+    if return_string:
+        return str(text)
+    else:
+        return text
 
 
 def fixForcedLineChange(text):

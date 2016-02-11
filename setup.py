@@ -7,7 +7,7 @@
 # @date:   2016-01-19 17:26:20
 #
 # @last modified by:   jaumebonet
-# @last modified time: 2016-01-27 18:19:47
+# @last modified time: 2016-02-11 13:07:07
 #
 # -*-
 from setuptools import setup, find_packages  # Always prefer setuptools over distutils
